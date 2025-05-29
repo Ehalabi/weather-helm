@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: {{ include "weather-app-chart.fullname" . }}
+  name: {{ .Values.service.name }}
   labels:
     {{- include "weather-app-chart.labels" . | nindent 4 }}
 spec:
