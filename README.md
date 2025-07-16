@@ -2,21 +2,21 @@
 
 This repository contains a Helm chart for deploying my **weatherapp** on a Kubernetes cluster using **ArgoCD** for GitOps.
 
-## 🚀 Overview
+## Overview
 
 - Helm chart directory: `weatherapp-github-helm/`
 - Designed to work with **ArgoCD** for continuous deployment.
 - Application containers are pulled from Docker Hub (or another container registry), requiring a Kubernetes image pull secret if the registry is private.
 
-## 🔷 Prerequisites
+## Prerequisites
 
-✅ Kubernetes cluster (v1.21+)  
-✅ Helm 3.x (optional, for local testing)  
-✅ ArgoCD configured and running in your cluster  
-✅ Docker image for `weather-webapp` built and pushed to your container registry  
-✅ (If private) a pre-created Kubernetes secret named `dockerhub-secret` in the target namespace, containing your registry credentials.
+* Kubernetes cluster (v1.21+)  
+* Helm 3.x (optional, for local testing)  
+* ArgoCD configured and running in your cluster  
+* Docker image for `weather-webapp` built and pushed to your container registry  
+* (If private) a pre-created Kubernetes secret named `dockerhub-secret` in the target namespace, containing your registry credentials.
 
-## 🔷 Building the Application Image
+## Building the Application Image
 
 This chart assumes that the weather web application image has already been built and published.  
 You can use the [weather-webapp](https://github.com/Ehalabi/weather-webapp) repository to build and push your own image:
@@ -47,7 +47,7 @@ kubectl create secret docker-registry dockerhub-secret \
   -n YOUR_NAMESPACE
 ```
 
-## 🔷 Deployment
+## Deployment
 
 Once everything is set up, you can deploy the chart using ArgoCD or Helm.
 
